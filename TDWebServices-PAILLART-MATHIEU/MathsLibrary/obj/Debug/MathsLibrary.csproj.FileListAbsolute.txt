@@ -1,0 +1,7 @@
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\bin\Debug\MathsLibrary.dll.config
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\bin\Debug\MathsLibrary.dll
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\bin\Debug\MathsLibrary.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\obj\Debug\MathsLibrary.csprojAssemblyReference.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\obj\Debug\MathsLibrary.csproj.CoreCompileInputs.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\obj\Debug\MathsLibrary.dll
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibrary\obj\Debug\MathsLibrary.pdb

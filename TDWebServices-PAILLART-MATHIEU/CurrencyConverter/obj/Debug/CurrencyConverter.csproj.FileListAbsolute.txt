@@ -5,3 +5,10 @@ D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\Cur
 D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.CoreCompileInputs.cache
 D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\CurrencyConverter\obj\Debug\CurrencyConverter.exe
 D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\bin\Debug\CurrencyConverter.exe
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\obj\Debug\CurrencyConverter.csprojAssemblyReference.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.CoreCompileInputs.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\obj\Debug\CurrencyConverter.exe
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\CurrencyConverter\obj\Debug\CurrencyConverter.pdb

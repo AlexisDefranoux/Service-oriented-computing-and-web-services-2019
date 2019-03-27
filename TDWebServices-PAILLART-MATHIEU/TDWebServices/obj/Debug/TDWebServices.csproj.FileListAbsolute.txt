@@ -1,7 +1,0 @@
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\bin\Debug\TDWebServices.exe.config
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\bin\Debug\TDWebServices.exe
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\bin\Debug\TDWebServices.pdb
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\obj\Debug\TDWebServices.csproj.CoreCompileInputs.cache
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\obj\Debug\TDWebServices.exe
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\obj\Debug\TDWebServices.pdb
-D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices\obj\Debug\TDWebServices.csprojAssemblyReference.cache
