@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDWebServices", "TDWebServices\TDWebServices.csproj", "{0E21AE7A-98AF-45B9-8C59-5A54A41D122C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDWebServices-WindowsForms", "TDWebServices-WindowsForms\TDWebServices-WindowsForms.csproj", "{B5BFD11C-E66C-4DCB-9936-183E8C5C38CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter", "CurrencyConverter\CurrencyConverter.csproj", "{7950703E-C49D-4D8A-B817-157C29204286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary2", "WcfServiceLibrary2\WcfServiceLibrary2.csproj", "{71B120F9-479F-4735-91BE-83E2CE00D171}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E21AE7A-98AF-45B9-8C59-5A54A41D122C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E21AE7A-98AF-45B9-8C59-5A54A41D122C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E21AE7A-98AF-45B9-8C59-5A54A41D122C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E21AE7A-98AF-45B9-8C59-5A54A41D122C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5BFD11C-E66C-4DCB-9936-183E8C5C38CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5BFD11C-E66C-4DCB-9936-183E8C5C38CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5BFD11C-E66C-4DCB-9936-183E8C5C38CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5BFD11C-E66C-4DCB-9936-183E8C5C38CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7950703E-C49D-4D8A-B817-157C29204286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7950703E-C49D-4D8A-B817-157C29204286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7950703E-C49D-4D8A-B817-157C29204286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7950703E-C49D-4D8A-B817-157C29204286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B120F9-479F-4735-91BE-83E2CE00D171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B120F9-479F-4735-91BE-83E2CE00D171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B120F9-479F-4735-91BE-83E2CE00D171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B120F9-479F-4735-91BE-83E2CE00D171}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9492F17E-80F8-486D-9074-A7608035F38F}
+	EndGlobalSection
+EndGlobal

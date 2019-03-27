@@ -1,0 +1,14 @@
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\bin\Debug\TDWebServices-WindowsForms.exe.config
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\bin\Debug\TDWebServices-WindowsForms.exe
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\bin\Debug\TDWebServices-WindowsForms.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices-WindowsForms.csprojAssemblyReference.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices_WindowsForms.Form1.resources
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices_WindowsForms.Properties.Resources.resources
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices-WindowsForms.csproj.GenerateResource.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices-WindowsForms.csproj.CoreCompileInputs.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices-WindowsForms.exe
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices-WindowsForms.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\bin\Debug\Newtonsoft.Json.dll
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\bin\Debug\Newtonsoft.Json.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\bin\Debug\Newtonsoft.Json.xml
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\TDWebServices-WindowsForms\obj\Debug\TDWebServices-WindowsForms.csproj.CopyComplete

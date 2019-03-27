@@ -1,0 +1,7 @@
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\bin\Debug\WcfServiceLibrary2.dll.config
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\bin\Debug\WcfServiceLibrary2.dll
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\bin\Debug\WcfServiceLibrary2.pdb
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\obj\Debug\WcfServiceLibrary2.csprojAssemblyReference.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\obj\Debug\WcfServiceLibrary2.csproj.CoreCompileInputs.cache
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\obj\Debug\WcfServiceLibrary2.dll
+D:\Mazet\Documents\Cours\Semestre 8\Web Services\TDWebServices\TDWebServices\WcfServiceLibrary2\obj\Debug\WcfServiceLibrary2.pdb
