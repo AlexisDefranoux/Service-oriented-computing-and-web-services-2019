@@ -5,3 +5,10 @@ D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-
 D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\bin\Debug\MathsLibraryCLI.pdb
 D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\obj\Debug\MathsLibraryCLI.exe
 D:\Mazet\Documents\Cours\Semestre 8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\obj\Debug\MathsLibraryCLI.pdb
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\bin\Debug\MathsLibraryCLI.exe.config
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\bin\Debug\MathsLibraryCLI.exe
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\bin\Debug\MathsLibraryCLI.pdb
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\obj\Debug\MathsLibraryCLI.csprojAssemblyReference.cache
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\obj\Debug\MathsLibraryCLI.csproj.CoreCompileInputs.cache
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\obj\Debug\MathsLibraryCLI.exe
+D:\Mazet\Documents\Cours\Semestre8\Web Services\GIT-TD-PROJET\Service-oriented-computing-and-web-services-2019\TDWebServices-PAILLART-MATHIEU\MathsLibraryCLI\obj\Debug\MathsLibraryCLI.pdb
