@@ -1,0 +1,4 @@
+port 8080 : au dessus de 1024, par défaut en général
+
+google.fr : 29 requêtes
+

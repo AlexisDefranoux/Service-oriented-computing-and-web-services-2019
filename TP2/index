@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*
+
+import cgi
+import os
+import urllib.parse as urlparse 
+
+form = cgi.FieldStorage()
+print("Content-type: text/html; charset=utf-8\n")
+
+#print(form.getvalue("name"))
+
+#if os.environ.has_key('nom_de_la_cle'):
+#	print(os.environ['nom_de_la_cle'])
+
+query_string=os.environ['QUERY_STRING']
+#print("query_string : " +query_string)
+
+url = "http://aaa?"+query_string
+
+parsed = urlparse.urlparse(url)
+nom = urlparse.parse_qs(parsed.query)['nom'][0]
+prenom = urlparse.parse_qs(parsed.query)['prenom'][0]
+
+html2 = """<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Doc. Produit par un CGI</TITLE>
+	</HEAD>
+	<BODY>
+		<H1>Bonjour """+nom+" "+prenom+"""<H1>
+	</BODY>
+</HTML>"""
+
+print(html2)
