@@ -1,5 +1,2 @@
-# Service-oriented-computing-and-web-services-2019
-Project for Service oriented computing and web services
-
-
-Mathieu Paillart & Corentin Artaud
+# TP de Mathieu Paillart
+Service oriented computing and web services 2019
