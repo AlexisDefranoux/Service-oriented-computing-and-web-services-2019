@@ -9,6 +9,16 @@ Service oriented computing and web services 2019
 
 ## Project choices :
 
+| Extensions | Status |
+|:----------:|:------:|
+| IWS        | -      |
+| Async      | -      |
+| Cache      | present|
+| Monitoring | -      |
+| Google api | -      |
+| Gui-webForm| -      |
+| Deployment | -      |
+
 ### Development :
 
 - Graphical User Interface for the client (Grade Scale : 6 points). Winforms is only an old simple framework to prototype basic graphical interfaces. Here, you can rather developp Web interfaces with WebForms (close to winforms design method to easily implement dynamic and interactive asp.net web pages) or other graphical client in other plateforms.
