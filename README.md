@@ -13,7 +13,7 @@ Service oriented computing and web services 2019
 |:----------:|:------:|
 | IWS        | -      |
 | Async      | -      |
-| Cache      | -      |
+| Cache      | present|
 | Monitoring | -      |
 | Google api | -      |
 | Gui-webForm| -      |
