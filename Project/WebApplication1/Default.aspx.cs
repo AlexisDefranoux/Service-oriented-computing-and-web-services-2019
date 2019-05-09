@@ -29,12 +29,25 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string maVille = inputStart.Value;
+            string maVille = ville.SelectedItem.Value;
             stations = JsonConvert.DeserializeObject<List<Station>>(restRequest(url + "stations?contract=" + maVille + apiKey));
+
+            //récuperer les GPS de dep et arr
+
+
+
+            //comparer les distance de dep et arr
+
+
+
+            //set les 4 adresses sur la map
+
+
+
             cbStation.Items.Clear();
             foreach (Station station in stations)
             {
-                cbStation.Items.Add(station.name);
+                cbStation.Items.Add(station.position.lat.ToString());
             }
         }
         
