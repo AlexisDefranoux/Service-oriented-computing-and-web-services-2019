@@ -9,8 +9,12 @@ namespace WebApplication1
 {
     public partial class Contact : Page
     {
+        public string originAddress = "Paris";
+        public string destinationAddress = "Marseille";
         protected void Page_Load(object sender, EventArgs e)
         {
+            originAddress = Request.QueryString["originAddress"];
+            destinationAddress = Request.QueryString["destinationAddress"];
 
         }
     }
