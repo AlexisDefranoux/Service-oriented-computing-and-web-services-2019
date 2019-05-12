@@ -36,6 +36,16 @@ namespace Serveur.Tests
             Assert.AreEqual("Test: " + "world", resource);
             Assert.AreEqual(2, testFeeder.Cpt);
         }
+
+        [TestMethod()]
+        public void GetResourceTestNoname()
+        {
+            TestCacheFeeder testFeeder = new TestCacheFeeder();
+            Cache<String> cache = new Cache<String>(0, testFeeder);
+            String resource = cache.GetResource("");
+            Assert.AreEqual("Test: " + "", resource);
+            Assert.AreEqual(1, testFeeder.Cpt);
+        }
     }
 
     class TestCacheFeeder : ICacheFeeder<String>

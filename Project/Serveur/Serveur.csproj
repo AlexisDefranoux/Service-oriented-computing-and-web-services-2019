@@ -35,6 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -45,14 +48,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheContent.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Requester.cs" />
     <Compile Include="ICacheFeeder.cs" />
     <Compile Include="Cache.cs" />
-    <Compile Include="IService1.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service1.cs" />
+    <Compile Include="RequesterCity.cs" />
+    <Compile Include="RequesterStations.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="Station.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

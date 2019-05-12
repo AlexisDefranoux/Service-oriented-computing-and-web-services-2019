@@ -60,6 +60,5 @@ namespace Serveur
             }
             return content.data;
         }
-
     }
 }
