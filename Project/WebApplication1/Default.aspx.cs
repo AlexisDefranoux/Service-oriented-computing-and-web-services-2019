@@ -37,7 +37,6 @@ namespace WebApplication1
                 }
                 ville.SelectedValue = "marseille";
             }
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -83,6 +82,7 @@ namespace WebApplication1
             response.Close();
             return responseFromServer;
         }
+
         private Position getLatLng(string Address)
         {
             string url2 = "https://maps.google.com/maps/api/geocode/json?address=" + Address + "&key=AIzaSyAG6cBbOp7_ko1vu350eqXRrJR47MGIo7w";
@@ -100,11 +100,8 @@ namespace WebApplication1
                     {
                         Lat = o["geometry"]["location"]["lat"].ToString();
                         Lng = o["geometry"]["location"]["lng"].ToString();
-
-
                     }
                 }
-               
             }
             return new Position()
             {
@@ -112,6 +109,7 @@ namespace WebApplication1
                 lng = double.Parse(Lng)
             };
         }
+
         private Station getNearestStation(string Ville, Position position)
         {
             var coord = new GeoCoordinate(position.lat, position.lng);
@@ -126,6 +124,7 @@ namespace WebApplication1
             };
             return getStation(stations, nearestStation);
         }
+
         private Station getStation(List<Station> stations,Position position)
         {
             return stations.FirstOrDefault(x => x.position.Equals(position));
