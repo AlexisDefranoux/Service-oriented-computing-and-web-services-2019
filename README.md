@@ -15,7 +15,7 @@ Service oriented computing and web services 2019
 | Async      | -      |
 | Cache      | present|
 | Monitoring | -      |
-| Google api | -      |
+| Google api | present|
 | Gui-webForm| -      |
 | Deployment | -      |
 
