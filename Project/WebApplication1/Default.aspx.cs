@@ -35,6 +35,7 @@ namespace WebApplication1
                 {
                     ville.Items.Add(city.name);
                 }
+                ville.SelectedValue = "marseille";
             }
 
         }
@@ -60,17 +61,7 @@ namespace WebApplication1
             System.Diagnostics.Debug.WriteLine("originStation :" + nearestStationOrigin);
             System.Diagnostics.Debug.WriteLine("destinationStation :" + nearestStationDestination);
 
-            Thread.Sleep(4000);
-            //PLUS QUE L'AJOUT DES VELIBS ET C'EST BON AAHAHAAH
-            //set les 4 adresses sur la map
 
-            /*
-
-            cbStation.Items.Clear();
-            foreach (Station station in stations)
-            {
-                cbStation.Items.Add(station.position.lat.ToString());
-            }*/
             string requestPage = "Contact?" +
                                 "originAddress=" + HttpUtility.UrlEncode(originAddress) +
                                 "&destinationAddress=" + HttpUtility.UrlEncode(destinationAddress) +
