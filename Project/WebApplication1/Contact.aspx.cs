@@ -15,7 +15,6 @@ namespace WebApplication1
         {
             originAddress = Request.QueryString["originAddress"];
             destinationAddress = Request.QueryString["destinationAddress"];
-
         }
     }
 }
