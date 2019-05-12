@@ -50,16 +50,9 @@ namespace WebApplication1
             Position originPosition = getLatLng(originAddress);
 
             Position destinationPosition = getLatLng(destinationAddress);
-            System.Diagnostics.Debug.WriteLine("OriginLat :"+ originPosition.lat);
-            System.Diagnostics.Debug.WriteLine("OriginLng :"+ originPosition.lng);
-            System.Diagnostics.Debug.WriteLine("DestinationLat :"+ destinationPosition.lat);
-            System.Diagnostics.Debug.WriteLine("DestinationLng :"+ destinationPosition.lng);
 
             Station nearestStationOrigin = getNearestStation(maVille, originPosition);
             Station nearestStationDestination = getNearestStation(maVille, destinationPosition);
-            System.Diagnostics.Debug.WriteLine("originStation :" + nearestStationOrigin);
-            System.Diagnostics.Debug.WriteLine("destinationStation :" + nearestStationDestination);
-
 
             string requestPage = "Contact?" +
                                 "originAddress=" + HttpUtility.UrlEncode(originAddress) +
@@ -73,11 +66,9 @@ namespace WebApplication1
         {
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
             Stream dataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(dataStream);
             string responseFromServer = reader.ReadToEnd();
-            Console.WriteLine(responseFromServer);
             reader.Close();
             response.Close();
             return responseFromServer;
