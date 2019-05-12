@@ -11,12 +11,12 @@ Service oriented computing and web services 2019
 
 | Extensions | Status |
 |:----------:|:------:|
-| IWS        | -      |
-| Async      | -      |
-| Cache      | present|
+| IWS        | Work in progress|
+| Async      | Work in progress|
+| Cache      | Done   |
 | Monitoring | -      |
-| Google api | -      |
-| Gui-webForm| -      |
+| Google api | Done	  |
+| Gui-webForm| Done   |
 | Deployment | -      |
 
 ### Development :

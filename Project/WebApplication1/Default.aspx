@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h2>Ton trajet en Velib</h2>
         <hr class="my-1">
-        <p class="lead">Génére ton trajet en fonction de ta position, ta destination et le vélib le plus prochaine !</p>
+        <p class="lead">Génére ton trajet en fonction de ta position, ta destination et le vélib le plus proche !</p>
     </div>
 
     <div class="jumbotron">
@@ -28,6 +28,5 @@
         </div>
         <asp:Button ID="Button1" runat="server" Text="Valider" class="btn btn-primary" OnClick="Button1_Click" />
     </div>
-
 
 </asp:Content>
