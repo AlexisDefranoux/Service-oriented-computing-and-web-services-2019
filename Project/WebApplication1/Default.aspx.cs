@@ -4,15 +4,13 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml;
-using GoogleMaps.LocationServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using WebApplication1.model;
+using System.Device.Location;
 
 namespace WebApplication1
 {
@@ -30,72 +28,39 @@ namespace WebApplication1
         {
             Button1.Attributes.Add("onclick", "onclick()");
             cities = JsonConvert.DeserializeObject<List<City>>(restRequest(url + "contracts?" + apiKey));
-            ville.Items.Clear();
-            foreach (City city in cities)
+            if (!IsPostBack)
             {
-                ville.Items.Add(city.name);
+                ville.Items.Clear();
+                foreach (City city in cities)
+                {
+                    ville.Items.Add(city.name);
+                }
             }
 
         }
-    
+
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string maVille = ville.SelectedItem.Value;
+            string maVille = ville.SelectedValue;
             stations = JsonConvert.DeserializeObject<List<Station>>(restRequest(url + "stations?contract=" + maVille + apiKey));
 
-            //récuperer les GPS de dep et arr
+            //récuperer les latitudes et longitudes de départ et arrivé.
             originAddress = inputStart.Value;
             destinationAddress = inputEnd.Value;
-        //comparer les distance de dep et arr
-            string url1 = "https://maps.google.com/maps/api/geocode/json?address=" + originAddress + "&key=AIzaSyAG6cBbOp7_ko1vu350eqXRrJR47MGIo7w";
-            WebRequest request = WebRequest.Create(url1);
-            string originLat="";
-            string originLng="";
-            using (WebResponse response = (HttpWebResponse)request.GetResponse())
-            {
-                using (var reader = new StreamReader(response.GetResponseStream()))
-                {
-                    var jsonResponse = JObject.Parse(reader.ReadToEnd()); // do something fun...
+            Position originPosition = getLatLng(originAddress);
 
-                    JArray a = JArray.Parse(jsonResponse["results"].ToString());
+            Position destinationPosition = getLatLng(destinationAddress);
+            System.Diagnostics.Debug.WriteLine("OriginLat :"+ originPosition.lat);
+            System.Diagnostics.Debug.WriteLine("OriginLng :"+ originPosition.lng);
+            System.Diagnostics.Debug.WriteLine("DestinationLat :"+ destinationPosition.lat);
+            System.Diagnostics.Debug.WriteLine("DestinationLng :"+ destinationPosition.lng);
 
-                    foreach (JObject o in a.Children<JObject>())
-                    {
-                        originLat = o["geometry"]["location"]["lat"].ToString();
-                        originLng = o["geometry"]["location"]["lng"].ToString();
-                    }
+            Station nearestStationOrigin = getNearestStation(maVille, originPosition);
+            Station nearestStationDestination = getNearestStation(maVille, destinationPosition);
+            System.Diagnostics.Debug.WriteLine("originStation :" + nearestStationOrigin);
+            System.Diagnostics.Debug.WriteLine("destinationStation :" + nearestStationDestination);
 
-                }
-
-
-            }
-            string url2 = "https://maps.google.com/maps/api/geocode/json?address=" + destinationAddress  + "&key=AIzaSyAG6cBbOp7_ko1vu350eqXRrJR47MGIo7w";
-            WebRequest requestDestination = WebRequest.Create(url2);
-            string destinationLat="";
-            string destinationLng="";
-            using (WebResponse response = (HttpWebResponse)requestDestination.GetResponse())
-            {
-                using (var reader = new StreamReader(response.GetResponseStream()))
-                {
-                    var jsonResponse = JObject.Parse(reader.ReadToEnd()); // do something fun...
-
-                    JArray a = JArray.Parse(jsonResponse["results"].ToString());
-
-                    foreach (JObject o in a.Children<JObject>())
-                    {
-                        destinationLat = o["geometry"]["location"]["lat"].ToString();
-                        destinationLng = o["geometry"]["location"]["lng"].ToString();
-                    }
-
-                }
-
-
-            }
-            string url3 = "Contact?" +
-"originAddress=" + HttpUtility.UrlEncode(originAddress)+
-"&destinationAddress=" + HttpUtility.UrlEncode(destinationAddress) ;
-            Response.Redirect(url3);
-            Thread.Sleep(1000);
+            Thread.Sleep(4000);
             //PLUS QUE L'AJOUT DES VELIBS ET C'EST BON AAHAHAAH
             //set les 4 adresses sur la map
 
@@ -106,8 +71,14 @@ namespace WebApplication1
             {
                 cbStation.Items.Add(station.position.lat.ToString());
             }*/
+            string requestPage = "Contact?" +
+                                "originAddress=" + HttpUtility.UrlEncode(originAddress) +
+                                "&destinationAddress=" + HttpUtility.UrlEncode(destinationAddress) +
+                                "&originNearestStation=" + HttpUtility.UrlEncode(nearestStationOrigin.address) +
+                                "&destinationNearestStation=" + HttpUtility.UrlEncode(nearestStationDestination.address);
+            Response.Redirect(requestPage);
         }
-        
+
         private string restRequest(String url)
         {
             WebRequest request = WebRequest.Create(url);
@@ -120,6 +91,53 @@ namespace WebApplication1
             reader.Close();
             response.Close();
             return responseFromServer;
+        }
+        private Position getLatLng(string Address)
+        {
+            string url2 = "https://maps.google.com/maps/api/geocode/json?address=" + Address + "&key=AIzaSyAG6cBbOp7_ko1vu350eqXRrJR47MGIo7w";
+            WebRequest request = WebRequest.Create(url2);
+            string Lat = "";
+            string Lng = "";
+            using (WebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                using (var reader = new StreamReader(response.GetResponseStream()))
+                {
+                    var jsonResponse = JObject.Parse(reader.ReadToEnd()); // do something fun...
+
+                    JArray a = JArray.Parse(jsonResponse["results"].ToString());
+                    foreach (JObject o in a.Children<JObject>())
+                    {
+                        Lat = o["geometry"]["location"]["lat"].ToString();
+                        Lng = o["geometry"]["location"]["lng"].ToString();
+
+
+                    }
+                }
+               
+            }
+            return new Position()
+            {
+                lat = double.Parse(Lat),
+                lng = double.Parse(Lng)
+            };
+        }
+        private Station getNearestStation(string Ville, Position position)
+        {
+            var coord = new GeoCoordinate(position.lat, position.lng);
+            var nearest = stations.Select(x => new GeoCoordinate(x.position.lat, x.position.lng))
+                                   .OrderBy(x => x.GetDistanceTo(coord))
+                                   .First();
+
+            Position nearestStation = new Position()
+            {
+                lat = nearest.Latitude,
+                lng = nearest.Longitude
+            };
+            return getStation(stations, nearestStation);
+        }
+        private Station getStation(List<Station> stations,Position position)
+        {
+            return stations.FirstOrDefault(x => x.position.Equals(position));
         }
     }
 }

@@ -53,24 +53,22 @@
 
             function requestGoogleMaps(directionsService, directionsDisplay) {
                 console.log("LOL");
-              /* var me = this;
                 var waypts = [];
                 waypts.push({
-                    location: this.originVelibId,
+                    location: "<%=this.originNearestStationAddress%>",
                     stopover: true
                 });
                 waypts.push({
-                    location: this.destinationVelibId,
+                    location: "<%=this.destinationNearestStationAddress%>",
                     stopover: true
                 });
-                */
                 directionsService.route(
                 
                     {
                         origin:"<%=this.originAddress%>",
                         destination:"<%=this.destinationAddress%>",
-                       // waypoints: waypts,
-                       // optimizeWaypoints: true,
+                        waypoints: waypts,
+                        optimizeWaypoints: true,
                        travelMode: "WALKING"
                     },
                     function (response, status) {
