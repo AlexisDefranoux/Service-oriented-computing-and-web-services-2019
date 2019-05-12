@@ -38,9 +38,37 @@ namespace Serveur
             });
         }
 
-        public Station GetNeerestStation(string city, Position pos)
+        public Station GetNeerestStation(string city, Position pos, bool start)
         {
-            return null;
+            List<Station> stations = stationByCity.GetResource(city);
+            if (stations is null) return null;
+            /*
+            foreach (Station station in (stations.OrderBy(s => s.Distance(pos))))
+            {
+                if (start)
+                {
+                    if (station.aviable_bikes > 0) return station;
+                }else
+                {
+                    if (station.available_bike_stands > 0) return station;
+                }
+            }
+            */
+            try {
+                return stations.OrderBy(s => s.Distance(pos)).First();
+
+            } catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public Task<Station> GetNeerestStationAsync(string city, Position pos, bool start)
+        {
+            return Task<Station>.Run(() =>
+            {
+                return GetNeerestStation(city, pos, start);
+            });
         }
 
         public Station GetStation(String city ,int id)
@@ -73,11 +101,6 @@ namespace Serveur
             return Task<List<Station>>.Run(() => {
                 return GetStations(city);
             });
-        }
-
-        public Task<Station> GetNeerestStationAsync(string city, Position pos)
-        {
-            throw new NotImplementedException();
         }
     }
 }

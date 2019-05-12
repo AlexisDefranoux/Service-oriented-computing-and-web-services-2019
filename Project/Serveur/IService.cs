@@ -17,7 +17,7 @@ namespace Serveur
         List<City> GetCities();
 
         [OperationContract]
-        Station GetNeerestStation(String city, Position pos);
+        Station GetNeerestStation(String city, Position pos, bool start);
 
         [OperationContract]
         Station GetStation(String city, int id);
