@@ -19,15 +19,14 @@
 
         <div class="form-group">
             <label for="inputStart">Adresse de départ</label>
-            <input type="text" runat="server" class="form-control" id="inputStart" value="296 avenue janvier passero les kirikos" placeholder="1234 Main St">
+            <input type="text" runat="server" class="form-control" id="inputStart" value="341 Chemin du Roucas Blanc, 13007 Marseille" placeholder="341 Chemin du Roucas Blanc, 13007 Marseille">
         </div>
 
         <div class="form-group">
             <label for="inputEnd">Adresse d'arrivé</label>
-            <input type="text" runat="server" class="form-control" id="inputEnd" placeholder="1234 Main St" value="2 rue emile bouton, bâtiment parc cézanne">
+            <input type="text" runat="server" class="form-control" id="inputEnd" placeholder="81 Traverse Prat, 13008 Marseille" value="81 Traverse Prat, 13008 Marseille">
         </div>
         <asp:Button ID="Button1" runat="server" Text="Valider" class="btn btn-primary" OnClick="Button1_Click" />
     </div>
-
 
 </asp:Content>

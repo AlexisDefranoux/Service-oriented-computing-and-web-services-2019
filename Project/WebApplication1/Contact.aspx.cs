@@ -9,12 +9,16 @@ namespace WebApplication1
 {
     public partial class Contact : Page
     {
-        public string originAddress = "Paris";
-        public string destinationAddress = "Marseille";
+        public string originAddress = "";
+        public string destinationAddress = "";
+        public string originNearestStationAddress = "";
+        public string destinationNearestStationAddress = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             originAddress = Request.QueryString["originAddress"];
             destinationAddress = Request.QueryString["destinationAddress"];
+            originNearestStationAddress = Request.QueryString["originNearestStation"];
+            destinationNearestStationAddress = Request.QueryString["destinationNearestStation"];
 
         }
     }
