@@ -9,15 +9,15 @@ Service oriented computing and web services 2019
 
 ## Project choices
 
-| Extensions | Status |
-|:----------:|:------:|
-| IWS        | Done   |
-| Async      | Done   |
-| Cache      | Done   |
-| Monitoring | Work in progress|
-| Google api | Done	  |
-| Gui-webForm| Done   |
-| Deployment | Work in progress|
+| Extensions | Status | Points |
+|:----------:|:------:|:------:|
+| Gui-webForm| Done   | 6 |
+| Async      | Done   | 3 |
+| Cache      | Done   | 10 |
+| Google api | Done	  | 10 |
+| Deployment | Work in progress | ~~10~~ |
+| Monitoring | Done | 5 |
+| Total |--------- | 34 |
 
 ## Features description
 
@@ -39,39 +39,30 @@ Service oriented computing and web services 2019
 
 ## How to use ? 
 
-- Il contiendra aussi étape après étape toutes les phases pour tester la compilation, le déploiement et le monitoring de vos projets.
+1. On Visual Studio, start the log servor
+2. Next the IWS
+3. Then start monitoring console
+4. At the end, the GUI velib
 
-1. Compilation :
+Thank to the monitoring console, you can display the log of the IWS storage on the log servor. For example :
 ```
-blabl
-```
-2. Déploiement :
-```
-blablab
-```
-3. Monitoring : 
+5/14/2019 12:19:07 AM : GetNeerestStationand the method duration is : 00:00:00.2323227
 ```
 
-```
 ## Architecture diagram 
 
-- Il contiendra aussi une présentation graphique type slides de votre architecture et des extensions traités
-
-![](https://i.imgur.com/2pMTsWO.png)
+![](https://i.imgur.com/c6nzQkb.png)
 
 
 ## Work repartition
 
-- vous devrez aussi présenter les extensions que vous avez traitées seul ou votre % d'investissement dans une extension traitée à deux.
-
 |Extensions  | Mathieu Paillart | Corentin Artaud | Alexis Defranoux |
 |:----------:|:------:|:------:|:------:|
-| IWS        |        |        |        |
-| Async      |        |        |        |
-| Cache      |        |        |        |
-| Monitoring |        |        |        |
-| Google api |  	  |        |        |
-| Gui-webForm|        |        |        |
-| Deployment |        |        |        |
-| Total      |        |        |        |
+| Gui-webForm| 30     |  0     |   70   |
+| Async      |   0    |  50    |  50    |
+| Cache      | 0      |  90    |  10    |
+| Google api |  100   |    0   |   0    |
+| ~~Deployment~~ |    |        |        |
+| Monitoring |  33    |    33  |  33    |
+| Total      |  166   |   173  |  163   |
 
