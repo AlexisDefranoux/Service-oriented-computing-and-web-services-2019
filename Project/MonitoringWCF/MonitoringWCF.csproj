@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A6A2E8C1-A498-41B0-917F-F80E6031CA27}</ProjectGuid>
+    <ProjectGuid>{79EE0ECC-C702-4D05-B3F6-8DB22B988CD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serveur</RootNamespace>
-    <AssemblyName>Serveur</AssemblyName>
+    <RootNamespace>MonitoringWCF</RootNamespace>
+    <AssemblyName>MonitoringWCF</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -35,9 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -47,55 +44,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CacheContent.cs" />
-    <Compile Include="City.cs" />
-    <Compile Include="Connected Services\MonitorWCF\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Requester.cs" />
-    <Compile Include="ICacheFeeder.cs" />
-    <Compile Include="Cache.cs" />
-    <Compile Include="IService.cs" />
-    <Compile Include="Position.cs" />
+    <Compile Include="IService1.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequesterCity.cs" />
-    <Compile Include="RequesterStations.cs" />
-    <Compile Include="Service.cs" />
-    <Compile Include="Station.cs" />
+    <Compile Include="Service1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\MonitorWCF\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\MonitorWCF\service.wsdl" />
-    <None Include="Connected Services\MonitorWCF\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\MonitorWCF\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MonitorWCF\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MonitorWCF\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MonitorWCF\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\MonitorWCF\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

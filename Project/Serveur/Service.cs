@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Serveur.MonitorWCF;
 
 namespace Serveur
 {
@@ -13,7 +14,7 @@ namespace Serveur
     {
         private Cache<List<City>> cities;
         private Cache<List<Station>> stationByCity;
-
+        private Service1Client monitorWCF = new Service1Client();
         private const String BASE_URL = "https://api.jcdecaux.com/vls/v1/";
         private const String CONTRACTS = "contracts/";
         private const String STATIONS = "stations/";
@@ -27,6 +28,7 @@ namespace Serveur
 
         public List<City> GetCities()
         {
+            logToMonitor("getCities");
             return cities.GetResource("");
         }
 
@@ -34,6 +36,7 @@ namespace Serveur
         {
             return Task<List<City>>.Run(() =>
             {
+                logToMonitor("getCitiesAsync");
                 return GetCities();
             });
         }
@@ -41,7 +44,11 @@ namespace Serveur
         public Station GetNeerestStation(string city, Position pos, bool start)
         {
             List<Station> stations = stationByCity.GetResource(city);
-            if (stations is null) return null;
+            if (stations is null)
+            {
+                logToMonitor("GetNeerestStation returned null");
+                return null;
+            }
             /*
             foreach (Station station in (stations.OrderBy(s => s.Distance(pos))))
             {
@@ -55,11 +62,13 @@ namespace Serveur
             }
             */
             try {
+                logToMonitor("GetNeerestStation");
                 return stations.OrderBy(s => s.Distance(pos)).First();
 
             } catch (Exception e)
             {
                 Console.WriteLine("Error : " + e);
+                logToMonitor("GetNeerestStation returned null");
                 return null;
             }
         }
@@ -68,6 +77,7 @@ namespace Serveur
         {
             return Task<Station>.Run(() =>
             {
+                logToMonitor("GetNeerestStationAsync");
                 return GetNeerestStation(city, pos, start);
             });
         }
@@ -77,9 +87,11 @@ namespace Serveur
             List<Station> stations = stationByCity.GetResource(city);
             try
             {
+                logToMonitor("GetStation");
                 return stations.Where(s => id == s.number).First();
             } catch (Exception e)
             {
+                logToMonitor("GetStation returned null");
                 Console.WriteLine("Error : " + e);
                 return null;
             }
@@ -89,6 +101,7 @@ namespace Serveur
         {
             return Task<Station>.Run(() =>
             {
+                logToMonitor("GetStationAsync");
                 return GetStation(city, id);
             });
         }
@@ -101,8 +114,14 @@ namespace Serveur
         public Task<List<Station>> GetStationsAsync(string city)
         {
             return Task<List<Station>>.Run(() => {
+                logToMonitor("GetStationsAsync");
                 return GetStations(city);
             });
+        }
+
+        public void logToMonitor(string mess)
+        {
+            monitorWCF.log(mess);
         }
     }
 }

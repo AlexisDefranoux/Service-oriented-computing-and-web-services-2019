@@ -24,6 +24,9 @@ namespace Serveur
 
         [OperationContract]
         List<Station> GetStations(String city);
+
+        [OperationContract]
+        void logToMonitor(string mess);
     }
 
 }
