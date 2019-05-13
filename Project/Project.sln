@@ -22,11 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringConsole", "Monito
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringWCF", "MonitoringWCF\MonitoringWCF.csproj", "{79EE0ECC-C702-4D05-B3F6-8DB22B988CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\TEST.csproj", "{39BE917D-F475-4979-AE87-8D4E7F1115B0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{79EE0ECC-C702-4D05-B3F6-8DB22B988CD6} = {79EE0ECC-C702-4D05-B3F6-8DB22B988CD6}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,10 +48,6 @@ Global
 		{79EE0ECC-C702-4D05-B3F6-8DB22B988CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79EE0ECC-C702-4D05-B3F6-8DB22B988CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79EE0ECC-C702-4D05-B3F6-8DB22B988CD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39BE917D-F475-4979-AE87-8D4E7F1115B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39BE917D-F475-4979-AE87-8D4E7F1115B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39BE917D-F475-4979-AE87-8D4E7F1115B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39BE917D-F475-4979-AE87-8D4E7F1115B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
