@@ -48,17 +48,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheContent.cs" />
-    <Compile Include="City.cs" />
+    <Compile Include="model\City.cs" />
     <Compile Include="Requester.cs" />
     <Compile Include="ICacheFeeder.cs" />
     <Compile Include="Cache.cs" />
     <Compile Include="IService.cs" />
-    <Compile Include="Position.cs" />
+    <Compile Include="model\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequesterCity.cs" />
     <Compile Include="RequesterStations.cs" />
     <Compile Include="Service.cs" />
-    <Compile Include="Station.cs" />
+    <Compile Include="model\Station.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

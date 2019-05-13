@@ -9,57 +9,64 @@ using System.Web;
 using System.Web.UI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using WebApplication1.model;
 using System.Device.Location;
+using VelibGuiClient.VelibService;
+using System.Threading.Tasks;
 
 namespace WebApplication1
 {
     public partial class _Default : Page
     {
-        List<Station> stations;
-        List<City> cities;
-        String apiKey = "&apiKey=7e929541306799d5f756f49451bc935fa6cf1d09";
-        String url = "https://api.jcdecaux.com/vls/v1/";
         string originAddress;
         string destinationAddress;
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Button1.Attributes.Add("onclick", "onclick()");
-            cities = JsonConvert.DeserializeObject<List<City>>(restRequest(url + "contracts?" + apiKey));
-            if (!IsPostBack)
-            {
-                ville.Items.Clear();
-                foreach (City city in cities)
-                {
-                    ville.Items.Add(city.name);
-                }
-                ville.SelectedValue = "marseille";
-            }
+            initCities();
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        private async void initCities()
         {
-            string maVille = ville.SelectedValue;
-            stations = JsonConvert.DeserializeObject<List<Station>>(restRequest(url + "stations?contract=" + maVille + apiKey));
+            ServiceClient serviceClient = new ServiceClient();
+            Task<City[]> asyncResponse = serviceClient.GetCitiesAsync();
+            City[] cities = await asyncResponse;
+            ville.Items.Clear();
+            foreach (City city in cities)
+            {
+                ville.Items.Add(city.name);
+            }
+            ville.SelectedValue = "marseille";
+        }
 
+        protected async void Button1_Click(object sender, EventArgs e)
+        {
             //récuperer les latitudes et longitudes de départ et arrivé.
             originAddress = inputStart.Value;
             destinationAddress = inputEnd.Value;
             Position originPosition = getLatLng(originAddress);
-
             Position destinationPosition = getLatLng(destinationAddress);
 
-            Station nearestStationOrigin = getNearestStation(maVille, originPosition);
-            Station nearestStationDestination = getNearestStation(maVille, destinationPosition);
+            Task<Station> nearestStationOriginTask = getStation(originPosition, true);
+            Station nearestStationOrigin = await nearestStationOriginTask;
+            Task<Station> nearestStationDestinationTask = getStation(destinationPosition, false);
+            Station nearestStationDestination = await nearestStationDestinationTask;
 
             string requestPage = "Contact?" +
                                 "originAddress=" + HttpUtility.UrlEncode(originAddress) +
                                 "&destinationAddress=" + HttpUtility.UrlEncode(destinationAddress) +
                                 "&originNearestStation=" + HttpUtility.UrlEncode(nearestStationOrigin.address) +
                                 "&destinationNearestStation=" + HttpUtility.UrlEncode(nearestStationDestination.address);
-            Response.Redirect(requestPage);
+            Response.Redirect(requestPage, false);
+        }
+
+        private async Task<Station> getStation(Position position, bool start)
+        {
+            String maVille = ville.SelectedValue;
+            ServiceClient serviceClient = new ServiceClient();
+            Task<Station> asyncResponse = serviceClient.GetNeerestStationAsync(maVille, position, start);
+            Station station = await asyncResponse;
+            return station;
         }
 
         private string restRequest(String url)
@@ -99,26 +106,6 @@ namespace WebApplication1
                 lat = double.Parse(Lat),
                 lng = double.Parse(Lng)
             };
-        }
-
-        private Station getNearestStation(string Ville, Position position)
-        {
-            var coord = new GeoCoordinate(position.lat, position.lng);
-            var nearest = stations.Select(x => new GeoCoordinate(x.position.lat, x.position.lng))
-                                   .OrderBy(x => x.GetDistanceTo(coord))
-                                   .First();
-
-            Position nearestStation = new Position()
-            {
-                lat = nearest.Latitude,
-                lng = nearest.Longitude
-            };
-            return getStation(stations, nearestStation);
-        }
-
-        private Station getStation(List<Station> stations,Position position)
-        {
-            return stations.FirstOrDefault(x => x.position.Equals(position));
         }
     }
 }
