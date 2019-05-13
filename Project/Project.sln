@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsServeur", "TestsServeur\TestsServeur.csproj", "{6A30B929-E2E1-40CE-8A99-B2A84B7F2AA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelibGuiClient", "WebApplication1\VelibGuiClient.csproj", "{B59364CE-9B55-408B-83B5-B7F3F81F9A73}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A6A2E8C1-A498-41B0-917F-F80E6031CA27} = {A6A2E8C1-A498-41B0-917F-F80E6031CA27}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

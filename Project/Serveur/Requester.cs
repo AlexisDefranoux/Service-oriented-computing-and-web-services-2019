@@ -37,7 +37,8 @@ namespace Serveur
                 return responseFromServer;
             } catch (Exception e)
             {
-                return "";
+                Console.WriteLine("Error : " + e);
+                return "Echec";
             }
             
         }

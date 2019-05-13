@@ -59,6 +59,7 @@ namespace Serveur
 
             } catch (Exception e)
             {
+                Console.WriteLine("Error : " + e);
                 return null;
             }
         }
@@ -79,6 +80,7 @@ namespace Serveur
                 return stations.Where(s => id == s.number).First();
             } catch (Exception e)
             {
+                Console.WriteLine("Error : " + e);
                 return null;
             }
         }
