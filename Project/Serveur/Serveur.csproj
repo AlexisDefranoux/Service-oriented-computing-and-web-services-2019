@@ -48,12 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheContent.cs" />
-    <Compile Include="model\City.cs" />
     <Compile Include="Connected Services\MonitorWCF\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="model\City.cs" />
     <Compile Include="Requester.cs" />
     <Compile Include="ICacheFeeder.cs" />
     <Compile Include="Cache.cs" />
@@ -67,8 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\MonitorWCF\Arrays.xsd">
+    <None Include="Connected Services\MonitorWCF\MonitoringWCF.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MonitorWCF\Serveur.MonitorWCF.LogItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MonitorWCF\service.wsdl" />
     <None Include="Connected Services\MonitorWCF\service.xsd">

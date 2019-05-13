@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/MonitoringWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MonitoringWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfLogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogItem" nillable="true" type="tns:LogItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogItem" nillable="true" type="tns:ArrayOfLogItem" />
+  <xs:complexType name="LogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="mess" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogItem" nillable="true" type="tns:LogItem" />
+</xs:schema>

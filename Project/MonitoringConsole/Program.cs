@@ -12,10 +12,10 @@ namespace MonitoringConsole
         static void Main(string[] args)
         {
             Service1Client monitor = new Service1Client();
-            string[] logging = monitor.getLogs();
+            LogItem[] logging = monitor.GetLogs();
             for (int i = 0; i < logging.Length; i++)
             {
-                Console.WriteLine(logging[i]);
+                Console.WriteLine(logging[i].date.ToString() + " : " + logging[i].mess + " and the method duration is : " + logging[i].time.ToString());
             }
             Console.ReadLine();
         }

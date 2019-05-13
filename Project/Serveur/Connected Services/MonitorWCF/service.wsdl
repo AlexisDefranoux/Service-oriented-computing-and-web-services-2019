@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/MonitoringWCF" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_log_InputMessage">
@@ -13,20 +13,20 @@
   <wsdl:message name="IService1_log_OutputMessage">
     <wsdl:part name="parameters" element="tns:logResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getLogs_InputMessage">
-    <wsdl:part name="parameters" element="tns:getLogs" />
+  <wsdl:message name="IService1_GetLogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogs" />
   </wsdl:message>
-  <wsdl:message name="IService1_getLogs_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getLogsResponse" />
+  <wsdl:message name="IService1_GetLogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogsResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="log">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/log" message="tns:IService1_log_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/logResponse" message="tns:IService1_log_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getLogs">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLogs" message="tns:IService1_getLogs_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLogsResponse" message="tns:IService1_getLogs_OutputMessage" />
+    <wsdl:operation name="GetLogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLogs" message="tns:IService1_GetLogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLogsResponse" message="tns:IService1_GetLogs_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -40,8 +40,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getLogs">
-      <soap:operation soapAction="http://tempuri.org/IService1/getLogs" style="document" />
+    <wsdl:operation name="GetLogs">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLogs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

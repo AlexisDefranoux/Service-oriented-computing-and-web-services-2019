@@ -9,23 +9,102 @@
 //------------------------------------------------------------------------------
 
 namespace MonitoringConsole.MonitorWCF {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LogItem", Namespace="http://schemas.datacontract.org/2004/07/MonitoringWCF")]
+    [System.SerializableAttribute()]
+    public partial class LogItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string messField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan timeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mess {
+            get {
+                return this.messField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.messField, value) != true)) {
+                    this.messField = value;
+                    this.RaisePropertyChanged("mess");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan time {
+            get {
+                return this.timeField;
+            }
+            set {
+                if ((this.timeField.Equals(value) != true)) {
+                    this.timeField = value;
+                    this.RaisePropertyChanged("time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MonitorWCF.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/log", ReplyAction="http://tempuri.org/IService1/logResponse")]
-        void log(string value);
+        void log(System.DateTime date, string value, System.TimeSpan time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/log", ReplyAction="http://tempuri.org/IService1/logResponse")]
-        System.Threading.Tasks.Task logAsync(string value);
+        System.Threading.Tasks.Task logAsync(System.DateTime date, string value, System.TimeSpan time);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLogs", ReplyAction="http://tempuri.org/IService1/getLogsResponse")]
-        string[] getLogs();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLogs", ReplyAction="http://tempuri.org/IService1/GetLogsResponse")]
+        MonitoringConsole.MonitorWCF.LogItem[] GetLogs();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLogs", ReplyAction="http://tempuri.org/IService1/getLogsResponse")]
-        System.Threading.Tasks.Task<string[]> getLogsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetLogs", ReplyAction="http://tempuri.org/IService1/GetLogsResponse")]
+        System.Threading.Tasks.Task<MonitoringConsole.MonitorWCF.LogItem[]> GetLogsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,20 +134,20 @@ namespace MonitoringConsole.MonitorWCF {
                 base(binding, remoteAddress) {
         }
         
-        public void log(string value) {
-            base.Channel.log(value);
+        public void log(System.DateTime date, string value, System.TimeSpan time) {
+            base.Channel.log(date, value, time);
         }
         
-        public System.Threading.Tasks.Task logAsync(string value) {
-            return base.Channel.logAsync(value);
+        public System.Threading.Tasks.Task logAsync(System.DateTime date, string value, System.TimeSpan time) {
+            return base.Channel.logAsync(date, value, time);
         }
         
-        public string[] getLogs() {
-            return base.Channel.getLogs();
+        public MonitoringConsole.MonitorWCF.LogItem[] GetLogs() {
+            return base.Channel.GetLogs();
         }
         
-        public System.Threading.Tasks.Task<string[]> getLogsAsync() {
-            return base.Channel.getLogsAsync();
+        public System.Threading.Tasks.Task<MonitoringConsole.MonitorWCF.LogItem[]> GetLogsAsync() {
+            return base.Channel.GetLogsAsync();
         }
     }
 }

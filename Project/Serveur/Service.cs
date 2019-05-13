@@ -19,7 +19,7 @@ namespace Serveur
         private const String CONTRACTS = "contracts/";
         private const String STATIONS = "stations/";
         private const String API_KEY = "apiKey=0b671de844c71548f714dea830547975a19ea09f";
-
+        private TimeSpan responseDelay;
         public Service()
         {
             cities = new Cache<List<City>>(0, new RequesterCity(BASE_URL + CONTRACTS, API_KEY));
@@ -28,25 +28,31 @@ namespace Serveur
 
         public List<City> GetCities()
         {
-            logToMonitor("getCities");
-            return cities.GetResource("");
+            DateTime beforeReq = DateTime.Now;
+            List<City> res = cities.GetResource("");
+            DateTime afterReq = DateTime.Now;
+            responseDelay = afterReq - beforeReq;
+            logToMonitor("getCities",responseDelay);
+            return res;
         }
 
         public Task<List<City>> GetCitiesAsync()
         {
             return Task<List<City>>.Run(() =>
             {
-                logToMonitor("getCitiesAsync");
-                return GetCities();
+               return GetCities();
             });
         }
 
         public Station GetNeerestStation(string city, Position pos, bool start)
         {
+            DateTime beforeReq = DateTime.Now;
             List<Station> stations = stationByCity.GetResource(city);
             if (stations is null)
             {
-                logToMonitor("GetNeerestStation returned null");
+                DateTime afterReq = DateTime.Now;
+                responseDelay = afterReq - beforeReq;
+                logToMonitor("GetNeerestStation returned null",responseDelay);
                 return null;
             }
             /*
@@ -62,13 +68,18 @@ namespace Serveur
             }
             */
             try {
-                logToMonitor("GetNeerestStation");
-                return stations.OrderBy(s => s.Distance(pos)).First();
+                Station station = stations.OrderBy(s => s.Distance(pos)).First();
+                DateTime afterReq = DateTime.Now;
+                responseDelay = afterReq - beforeReq;
+                logToMonitor("GetNeerestStation",responseDelay);
+                return station;
 
             } catch (Exception e)
             {
                 Console.WriteLine("Error : " + e);
-                logToMonitor("GetNeerestStation returned null");
+                DateTime afterReq = DateTime.Now;
+                responseDelay = afterReq - beforeReq;
+                logToMonitor("GetNeerestStation returned null", responseDelay);
                 return null;
             }
         }
@@ -77,21 +88,26 @@ namespace Serveur
         {
             return Task<Station>.Run(() =>
             {
-                logToMonitor("GetNeerestStationAsync");
                 return GetNeerestStation(city, pos, start);
             });
         }
 
         public Station GetStation(String city ,int id)
         {
+            DateTime beforeReq = DateTime.Now;
             List<Station> stations = stationByCity.GetResource(city);
             try
             {
-                logToMonitor("GetStation");
-                return stations.Where(s => id == s.number).First();
+                Station station = stations.Where(s => id == s.number).First();
+                DateTime afterReq = DateTime.Now;
+                responseDelay = afterReq - beforeReq;
+                logToMonitor("GetStation", responseDelay);
+                return station;
             } catch (Exception e)
             {
-                logToMonitor("GetStation returned null");
+                DateTime afterReq = DateTime.Now;
+                responseDelay = afterReq - beforeReq;
+                logToMonitor("GetStation returned null",responseDelay);
                 Console.WriteLine("Error : " + e);
                 return null;
             }
@@ -101,27 +117,30 @@ namespace Serveur
         {
             return Task<Station>.Run(() =>
             {
-                logToMonitor("GetStationAsync");
                 return GetStation(city, id);
             });
         }
 
         public List<Station> GetStations(string city)
         {
-            return stationByCity.GetResource(city);
+            DateTime beforeReq = DateTime.Now;
+            List<Station> res = stationByCity.GetResource(city);
+            DateTime afterReq = DateTime.Now;
+            responseDelay = afterReq - beforeReq;
+            logToMonitor("GetStations", responseDelay);
+            return res;
         }
 
         public Task<List<Station>> GetStationsAsync(string city)
         {
             return Task<List<Station>>.Run(() => {
-                logToMonitor("GetStationsAsync");
                 return GetStations(city);
             });
         }
 
-        public void logToMonitor(string mess)
+        public void logToMonitor(string mess,TimeSpan span)
         {
-            monitorWCF.log(mess);
+            monitorWCF.log(DateTime.Now,mess,span);
         }
     }
 }

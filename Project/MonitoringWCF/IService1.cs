@@ -13,9 +13,9 @@ namespace MonitoringWCF
     {
 
         [OperationContract]
-        void log(string value);
+        void log(DateTime date,string value,TimeSpan time);
 
         [OperationContract]
-        List<string> getLogs();
+        List<LogItem> GetLogs();
     }
 }

@@ -26,7 +26,7 @@ namespace Serveur
         List<Station> GetStations(String city);
 
         [OperationContract]
-        void logToMonitor(string mess);
+        void logToMonitor(string mess, TimeSpan span);
     }
 
 }

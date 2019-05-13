@@ -11,17 +11,16 @@ namespace MonitoringWCF
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service1 : IService1
     {
-        private static Log logger = new Log();
-  
+        public static Logs logger = new Logs();
 
-        public List<string> getLogs()
+        public List<LogItem> GetLogs()
         {
-            return logger.getLogs();
+            return logger.queue;
         }
 
-        public void log(string value)
+        public void log(DateTime date,string value,TimeSpan time)
         {
-            logger.addMessage(value);
+            logger.addMessage(date,value,time);
         }
     }
 }
